@@ -2,17 +2,21 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
+import { seed } from './seeds/seed';
 
 async function start() {
   const PORT = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule);
 
+  await seed();
+
   const config = new DocumentBuilder()
-    .setTitle('Vacation calender')
+    .setTitle('Vacation calendar')
     .setDescription('Documentation REST API')
     .setVersion('1.0.0')
-    .addTag('calender')
+    .addTag('calendar')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/docs', app, document);
 

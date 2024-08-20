@@ -6,7 +6,6 @@ import { Users } from './users/users.model';
 import { RolesModule } from './roles/roles.module';
 import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
-import { RolesService } from './roles/roles.service';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
@@ -24,7 +23,8 @@ import { AuthModule } from './auth/auth.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: [Users, Role, UserRoles],
-      synchronize: true,
+      synchronize: false,
+      migrationsRun: true,
     }),
     UsersModule,
     RolesModule,
