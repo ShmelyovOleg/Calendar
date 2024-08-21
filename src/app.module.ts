@@ -6,8 +6,9 @@ import { Users } from './users/users.model';
 import { RolesModule } from './roles/roles.module';
 import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
-import { RolesService } from './roles/roles.service';
 import { AuthModule } from './auth/auth.module';
+
+console.log(process.env);
 
 @Module({
   controllers: [],
