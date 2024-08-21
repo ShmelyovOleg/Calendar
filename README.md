@@ -1,33 +1,57 @@
-## Installation
+## Clone 
 
-```bash
-$ npm install
+```shell
+git clone git@github.com:ShmelyovOleg/calendar.git
 ```
 
-## Running the app
+## Setup environment 
 
-```bash
-# development
-$ npm run start
+```shell
+cp .env.example .env
+```
+where:
+### Environment Variables
 
-# watch mode
-$ npm run start:dev
+The application relies on the following environment variables, which need to be set up in your environment or `.env` file for proper configuration:
 
-# production mode
-$ npm run start:prod
+- **`PORT`**: The port on which the application will run. Default is `5000`.
+
+- **`MYSQL_HOST`**: The hostname of the MySQL server. Typically set to `mysql` when running in a Docker container.
+
+- **`MYSQL_USER`**: The username used to connect to the MySQL database. Example: `dbuser`.
+
+- **`MYSQL_PORT`**: The port on which the MySQL server is running. Default is `3306`.
+
+- **`MYSQL_PASSWORD`**: The password for the MySQL user. Ensure this is kept secure.
+
+- **`MYSQL_DATABASE`**: The name of the MySQL database that the application will use. Example: `user_management`.
+
+- **`MYSQL_ROOT_PASSWORD`**: The root password for the MySQL server. This should be kept highly secure.
+
+- **`PHPMYADMIN_PORT`**: The port on which phpMyAdmin will be accessible. Default is `8080`.
+
+## Install
+
+```shell
+make install
 ```
 
-## Test
+Install node_modules and other dependencies.
 
-```bash
-# unit tests
-$ npm run test
+## Run application 
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```shell
+make up
 ```
 
-test
+## Makefile Commands
+
+- **`check`** - Check your configuration
+
+- **`up`** - Start all containers (in background)
+
+- **`down`** - Stop all started for development containers
+
+- **`restart`** - Restart all started for development containers
+
+- **`install`** - Install dependencies
