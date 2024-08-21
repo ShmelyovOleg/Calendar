@@ -33,10 +33,6 @@ export class Users {
   @Column({ type: 'varchar', length: 255, nullable: true })
   position: string;
 
-  // @ApiProperty({example: 'user', description: 'user role'})
-  // @Column({ type: 'varchar', length: 255, default:"USER"})
-  // role: string;
-
   @ApiProperty({ example: 'fired', description: 'user status' })
   @Column({ type: 'varchar', length: 255, nullable: true })
   status: string;

@@ -4,6 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 
 async function start() {
+  console.log(process.env);
   const PORT = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule);
 
