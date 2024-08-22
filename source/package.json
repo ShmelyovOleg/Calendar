@@ -1,5 +1,5 @@
 {
-  "name": "backend_course",
+  "name": "calendar",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "seed": "ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d ./src/db/data-source.ts"
+    "seed": "ts-node -r tsconfig-paths/register src/db/run-seed.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
