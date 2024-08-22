@@ -48,8 +48,8 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    ports:
-      - ${MYSQL_PORT}:3306
+    # ports:
+    # - ${MYSQL_PORT}:3306
     networks:
       www-calendar:
     volumes:

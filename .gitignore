@@ -1,3 +1,4 @@
 /.env
 /source/.env
+/node_modules
 .DS_Store
