@@ -23,5 +23,7 @@ restart: ## Restart all started for development containers
 	$(docker_compose_bin) $(COMPOSE_CONFIG) restart
 install: ## Install dependencies
 	"$(docker_compose_bin)" $(COMPOSE_CONFIG) run --rm ${USER_CONFIG} app npm install
+sh-app: ## Run node container bash
+	"$(docker_compose_bin)" $(COMPOSE_CONFIG) run --rm ${USER_CONFIG} app bash
 seed: ## Run database seed
 	"$(docker_compose_bin)" $(COMPOSE_CONFIG) exec app npm run seed
