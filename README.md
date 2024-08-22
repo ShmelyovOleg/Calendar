@@ -1,15 +1,17 @@
-## Clone 
+## Clone
 
 ```shell
 git clone git@github.com:ShmelyovOleg/calendar.git
 ```
 
-## Setup environment 
+## Setup environment
 
 ```shell
 cp .env.example .env
 ```
+
 where:
+
 ### Environment Variables
 
 The application relies on the following environment variables, which need to be set up in your environment or `.env` file for proper configuration:
@@ -38,10 +40,16 @@ make install
 
 Install node_modules and other dependencies.
 
-## Run application 
+## Run application
 
 ```shell
 make up
+```
+
+## Fill the database with initial data
+
+```shell
+make seed
 ```
 
 ## Makefile Commands
@@ -55,3 +63,5 @@ make up
 - **`restart`** - Restart all started for development containers
 
 - **`install`** - Install dependencies
+
+- **`seed`** - Create initial data
