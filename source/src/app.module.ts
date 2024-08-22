@@ -8,8 +8,6 @@ import { Role } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
 import { AuthModule } from './auth/auth.module';
 
-console.log(process.env);
-
 @Module({
   controllers: [],
   providers: [],
