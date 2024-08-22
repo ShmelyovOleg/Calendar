@@ -9,16 +9,13 @@ config();
 
 export const dataSourceOptions: DataSourceOptions & SeederOptions = {
   type: 'mysql',
-  host: process.env.MYSQL_HOST || 'mysql',
-  port: Number(process.env.MYSQL_PORT) || 3306,
-  username: process.env.MYSQL_USER || 'dbuser',
-  password: process.env.MYSQL_PASSWORD || 'K5S3akrFvC3jw',
-  database: process.env.MYSQL_DATABASE || 'user_management',
-  // entities: ['dist/**/*.model.js'],
+  host: process.env.MYSQL_HOST,
+  port: Number(process.env.MYSQL_PORT),
+  username: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
   entities: [Users, Role, UserRoles],
-  //   migrations: ['dist/db/migrations/*.js'],
-  //   migrationsRun: process.env.NODE_ENV === 'development',
-
+  synchronize: true,
   seeds: ['dist/db/seeds/**/*.js'],
   //   factories: ['dist/db/factories/**/*.js'],
 };
